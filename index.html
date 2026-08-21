@@ -1,0 +1,1091 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iron Peak Fitness — Train Hard. Get Results. | Toronto Gym</title>
+    <meta
+      name="description"
+      content="Iron Peak Fitness is a no-nonsense gym in downtown Toronto. Strength training, HIIT, open gym, and beginner bootcamps. Book your free trial class today at 120 Bathurst St."
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Iron Peak Fitness — Train Hard. Get Results."
+    />
+    <meta
+      property="og:description"
+      content="No fluff. Just real training. Join Toronto's most results-driven gym. Free trial class available."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ironpeakfitness.ca" />
+    <meta
+      property="og:image"
+      content="https://www.ironpeakfitness.ca/PLACEHOLDER-og-image.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Athletes training inside Iron Peak Fitness — kettlebells, ropes, and determination on the gym floor."
+    />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              iron: {
+                black: "#0a0a0a",
+                dark: "#141414",
+                card: "#1c1c1c",
+                border: "#2a2a2a",
+                gray: "#a0a0a0",
+                light: "#e5e5e5",
+                white: "#fafafa",
+              },
+              blaze: {
+                DEFAULT: "#F15A24",
+                light: "#F97316",
+                dark: "#D1480F",
+              },
+            },
+            fontFamily: {
+              display: ['"Bebas Neue"', "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ------------------------------------------------------------------ */
+      /* Mobile-first base tweaks                                            */
+      /* ------------------------------------------------------------------ */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 4rem;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0a0a0a;
+        color: #fafafa;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Visible focus ring for keyboard navigation */
+      :focus-visible {
+        outline: 3px solid #f15a24;
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+
+      /* Hamburger transitions */
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.35s ease,
+          padding 0.35s ease;
+      }
+      .mobile-menu.open {
+        max-height: 320px;
+      }
+
+      /* Underline accent on hover for nav links */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: #f15a24;
+        transition: width 0.25s ease;
+      }
+      .nav-link:hover::after,
+      .nav-link:focus-visible::after {
+        width: 100%;
+      }
+
+      /* Hero background overlay */
+      .hero-bg {
+        background: linear-gradient(
+          180deg,
+          rgba(10, 10, 10, 0.55) 0%,
+          rgba(10, 10, 10, 0.82) 70%,
+          #0a0a0a 100%
+        );
+      }
+    </style>
+  </head>
+  <body class="font-body antialiased">
+    <!-- ================================================================== -->
+    <!-- SECTION: Navigation (sticky, mobile-first hamburger)                -->
+    <!-- ================================================================== -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-iron-black/90 backdrop-blur-sm border-b border-iron-border"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <a
+            href="#"
+            class="flex items-center gap-2 no-underline"
+            aria-label="Iron Peak Fitness home"
+          >
+            <!-- Inline SVG: dumbbell icon -->
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <rect x="2" y="10" width="8" height="12" rx="2" fill="#F15A24" />
+              <rect x="22" y="10" width="8" height="12" rx="2" fill="#F15A24" />
+              <rect x="10" y="12" width="12" height="2" rx="1" fill="#F15A24" />
+              <rect x="10" y="18" width="12" height="2" rx="1" fill="#F15A24" />
+            </svg>
+            <span class="font-display text-2xl tracking-wider text-iron-white"
+              >IRON PEAK</span
+            >
+          </a>
+
+          <!-- Desktop nav -->
+          <nav
+            class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wider uppercase text-iron-gray"
+            aria-label="Main navigation"
+          >
+            <a href="#about" class="nav-link hover:text-blaze transition-colors"
+              >About</a
+            >
+            <a
+              href="#classes"
+              class="nav-link hover:text-blaze transition-colors"
+              >Classes</a
+            >
+            <a
+              href="#contact"
+              class="nav-link hover:text-blaze transition-colors"
+              >Contact</a
+            >
+            <a
+              href="#contact"
+              class="inline-block bg-blaze hover:bg-blaze-dark text-white font-semibold px-5 py-2.5 rounded uppercase tracking-wider text-xs transition-colors"
+            >
+              Free Trial
+            </a>
+          </nav>
+
+          <!-- Hamburger button (mobile) -->
+          <button
+            id="hamburger"
+            class="md:hidden flex flex-col gap-1.5 p-2 bg-transparent border-none cursor-pointer"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span
+              class="block w-6 h-0.5 bg-iron-white transition-transform duration-300 origin-center"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-iron-white transition-opacity duration-300"
+            ></span>
+            <span
+              class="block w-6 h-0.5 bg-iron-white transition-transform duration-300 origin-center"
+            ></span>
+          </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <nav
+          id="mobileMenu"
+          class="mobile-menu md:hidden"
+          aria-label="Mobile navigation"
+        >
+          <div
+            class="flex flex-col gap-3 pb-4 pt-1 text-sm font-medium tracking-wider uppercase text-iron-gray"
+          >
+            <a
+              href="#about"
+              class="block py-2 hover:text-blaze transition-colors"
+              >About</a
+            >
+            <a
+              href="#classes"
+              class="block py-2 hover:text-blaze transition-colors"
+              >Classes</a
+            >
+            <a
+              href="#contact"
+              class="block py-2 hover:text-blaze transition-colors"
+              >Contact</a
+            >
+            <a
+              href="#contact"
+              class="inline-block bg-blaze hover:bg-blaze-dark text-white font-semibold px-5 py-2.5 rounded uppercase tracking-wider text-xs text-center transition-colors"
+            >
+              Book Your Free Trial Class
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ================================================================ -->
+      <!-- SECTION: Hero                                                     -->
+      <!-- ================================================================ -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex items-center justify-center overflow-hidden bg-iron-black"
+      >
+        <!-- Hero background image (placeholder) -->
+        <img
+          src="PLACEHOLDER-hero-gym-floor.jpg"
+          alt="Wide shot of a gritty, industrial gym floor at Iron Peak Fitness. Racks of dumbbells, battle ropes anchored to the wall, and chalk dust catching morning light streaming through high warehouse windows."
+          class="absolute inset-0 w-full h-full object-cover opacity-50"
+          loading="eager"
+        />
+
+        <!-- Gradient overlay -->
+        <div class="hero-bg absolute inset-0 z-10"></div>
+
+        <!-- Hero content -->
+        <div
+          class="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-16"
+        >
+          <p
+            class="font-display text-blaze text-xl sm:text-2xl tracking-[.3em] uppercase mb-3"
+          >
+            Iron Peak Fitness
+          </p>
+          <h1
+            class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] text-iron-white mb-6"
+          >
+            TRAIN HARD.<br />GET RESULTS.
+          </h1>
+          <p
+            class="text-lg sm:text-xl text-iron-gray max-w-xl mx-auto mb-10 leading-relaxed"
+          >
+            No fluff. No gimmicks. Just real training, real people, and real
+            progress — every single session.
+          </p>
+          <a
+            href="#contact"
+            class="inline-block bg-blaze hover:bg-blaze-dark text-white font-bold px-8 py-4 rounded uppercase tracking-wider text-sm sm:text-base transition-all duration-200 hover:scale-105 focus-visible:scale-105 shadow-lg shadow-blaze/25"
+          >
+            Book Your Free Trial Class
+          </a>
+          <p class="mt-5 text-xs text-iron-gray tracking-wide">
+            First class on us. No commitment. No pressure.
+          </p>
+        </div>
+
+        <!-- Scroll hint -->
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-iron-gray/60"
+        >
+          <span class="text-[10px] uppercase tracking-[.25em]">Scroll</span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+            class="animate-bounce"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- SECTION: About / Intro (short)                                    -->
+      <!-- ================================================================ -->
+      <section id="about" class="py-20 sm:py-28 bg-iron-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <!-- Image column -->
+            <div class="relative">
+              <img
+                src="PLACEHOLDER-about-community-training.jpg"
+                alt="A tight-knit group of Iron Peak Fitness members performing kettlebell swings together in a bright, open studio space. Everyone is focused and sweating — a mix of beginners and experienced athletes supporting each other."
+                class="w-full rounded-lg shadow-2xl"
+                loading="lazy"
+              />
+              <!-- Accent badge over image -->
+              <div
+                class="absolute -bottom-4 -right-4 bg-blaze text-white font-display text-2xl sm:text-3xl px-5 py-3 rounded shadow-lg tracking-wide"
+              >
+                EST. 2018
+              </div>
+            </div>
+
+            <!-- Text column -->
+            <div>
+              <p
+                class="font-display text-blaze text-lg tracking-[.2em] uppercase mb-2"
+              >
+                Who We Are
+              </p>
+              <h2
+                class="font-display text-4xl sm:text-5xl leading-[1.05] text-iron-white mb-6"
+              >
+                A GYM BUILT ON<br />GRIT & COMMUNITY
+              </h2>
+              <p class="text-iron-gray leading-relaxed mb-4">
+                Iron Peak Fitness opened its doors in 2018 with one mission:
+                strip away the noise and deliver
+                <strong class="text-iron-light font-semibold"
+                  >results-driven training</strong
+                >
+                for people who show up ready to work. We don't do glossy sales
+                pitches. We do heavy lifts, high-intensity conditioning, and a
+                community that pushes each other past every plateau.
+              </p>
+              <p class="text-iron-gray leading-relaxed mb-4">
+                Whether you're stepping into a gym for the first time or you've
+                been chasing PRs for a decade, you belong here. Our coaches meet
+                you where you are — then they push you further.
+              </p>
+              <p class="text-iron-gray leading-relaxed">
+                <strong class="text-iron-light font-semibold"
+                  >No mirrors. No egos. Just progress.</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- SECTION: Classes / Offerings preview (short list)                 -->
+      <!-- ================================================================ -->
+      <section id="classes" class="py-20 sm:py-28 bg-iron-black">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section heading -->
+          <div class="text-center mb-14 sm:mb-18">
+            <p
+              class="font-display text-blaze text-lg tracking-[.2em] uppercase mb-2"
+            >
+              Train Your Way
+            </p>
+            <h2 class="font-display text-4xl sm:text-5xl text-iron-white">
+              CLASSES THAT DELIVER
+            </h2>
+            <p class="text-iron-gray mt-4 max-w-xl mx-auto leading-relaxed">
+              Every class is coached with purpose. Pick your weapon — or mix
+              them all across the week.
+            </p>
+          </div>
+
+          <!-- Class cards grid -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1: Strength Training -->
+            <article
+              class="bg-iron-card border border-iron-border rounded-lg p-6 sm:p-8 flex flex-col items-start hover:border-blaze/50 transition-colors duration-300 group"
+            >
+              <!-- Icon: barbell -->
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                class="mb-5 text-blaze group-hover:scale-110 transition-transform duration-300"
+              >
+                <rect
+                  x="2"
+                  y="16"
+                  width="36"
+                  height="8"
+                  rx="4"
+                  fill="currentColor"
+                />
+                <rect
+                  x="6"
+                  y="10"
+                  width="4"
+                  height="20"
+                  rx="2"
+                  fill="currentColor"
+                />
+                <rect
+                  x="30"
+                  y="10"
+                  width="4"
+                  height="20"
+                  rx="2"
+                  fill="currentColor"
+                />
+              </svg>
+              <h3
+                class="font-display text-2xl tracking-wide text-iron-white mb-3"
+              >
+                Strength Training
+              </h3>
+              <p class="text-iron-gray text-sm leading-relaxed">
+                Compound lifts, progressive overload, and expert coaching. Build
+                raw power with structured programming that actually works.
+              </p>
+              <p
+                class="mt-4 text-blaze text-xs font-semibold uppercase tracking-wider"
+              >
+                Mon · Wed · Fri — 6 AM & 5 PM
+              </p>
+            </article>
+
+            <!-- Card 2: HIIT -->
+            <article
+              class="bg-iron-card border border-iron-border rounded-lg p-6 sm:p-8 flex flex-col items-start hover:border-blaze/50 transition-colors duration-300 group"
+            >
+              <!-- Icon: lightning bolt -->
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                class="mb-5 text-blaze group-hover:scale-110 transition-transform duration-300"
+              >
+                <polygon
+                  points="22,2 6,22 18,22 14,38 34,16 22,16 26,2"
+                  fill="currentColor"
+                />
+              </svg>
+              <h3
+                class="font-display text-2xl tracking-wide text-iron-white mb-3"
+              >
+                HIIT
+              </h3>
+              <p class="text-iron-gray text-sm leading-relaxed">
+                High-intensity intervals that torch calories and build
+                cardiovascular engine. Fast, fierce, and never the same workout
+                twice.
+              </p>
+              <p
+                class="mt-4 text-blaze text-xs font-semibold uppercase tracking-wider"
+              >
+                Tue · Thu · Sat — 7 AM & 12 PM
+              </p>
+            </article>
+
+            <!-- Card 3: Open Gym -->
+            <article
+              class="bg-iron-card border border-iron-border rounded-lg p-6 sm:p-8 flex flex-col items-start hover:border-blaze/50 transition-colors duration-300 group"
+            >
+              <!-- Icon: clock / open door -->
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                class="mb-5 text-blaze group-hover:scale-110 transition-transform duration-300"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="15"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  fill="none"
+                />
+                <polyline
+                  points="20,10 20,20 27,24"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <h3
+                class="font-display text-2xl tracking-wide text-iron-white mb-3"
+              >
+                Open Gym
+              </h3>
+              <p class="text-iron-gray text-sm leading-relaxed">
+                Full facility access on your schedule. Racks, platforms, sleds,
+                and all the space you need to do your own thing.
+              </p>
+              <p
+                class="mt-4 text-blaze text-xs font-semibold uppercase tracking-wider"
+              >
+                All open hours — come anytime
+              </p>
+            </article>
+
+            <!-- Card 4: Beginner Bootcamp -->
+            <article
+              class="bg-iron-card border border-iron-border rounded-lg p-6 sm:p-8 flex flex-col items-start hover:border-blaze/50 transition-colors duration-300 group"
+            >
+              <!-- Icon: target / compass -->
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                class="mb-5 text-blaze group-hover:scale-110 transition-transform duration-300"
+              >
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="15"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  fill="none"
+                />
+                <circle cx="20" cy="20" r="6" fill="currentColor" />
+                <line
+                  x1="20"
+                  y1="2"
+                  x2="20"
+                  y2="10"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+                <line
+                  x1="20"
+                  y1="30"
+                  x2="20"
+                  y2="38"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+                <line
+                  x1="2"
+                  y1="20"
+                  x2="10"
+                  y2="20"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+                <line
+                  x1="30"
+                  y1="20"
+                  x2="38"
+                  y2="20"
+                  stroke="currentColor"
+                  stroke-width="3"
+                />
+              </svg>
+              <h3
+                class="font-display text-2xl tracking-wide text-iron-white mb-3"
+              >
+                Beginner Bootcamp
+              </h3>
+              <p class="text-iron-gray text-sm leading-relaxed">
+                New to fitness? Start here. Small groups, foundational
+                movements, and a coach who actually learns your name — not just
+                your number.
+              </p>
+              <p
+                class="mt-4 text-blaze text-xs font-semibold uppercase tracking-wider"
+              >
+                Sat — 9 AM · Sun — 10 AM
+              </p>
+            </article>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="text-center mt-12">
+            <p class="text-iron-gray text-sm mb-4">
+              Every membership includes unlimited access to all classes.
+            </p>
+            <a
+              href="#contact"
+              class="inline-block border-2 border-blaze text-blaze hover:bg-blaze hover:text-white font-semibold px-6 py-3 rounded uppercase tracking-wider text-sm transition-all duration-200"
+            >
+              Claim Your Free Trial
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================ -->
+      <!-- SECTION: Contact (form + map + hours)                             -->
+      <!-- ================================================================ -->
+      <section id="contact" class="py-20 sm:py-28 bg-iron-dark">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section heading -->
+          <div class="text-center mb-14">
+            <p
+              class="font-display text-blaze text-lg tracking-[.2em] uppercase mb-2"
+            >
+              Get In Touch
+            </p>
+            <h2 class="font-display text-4xl sm:text-5xl text-iron-white">
+              START YOUR JOURNEY
+            </h2>
+            <p class="text-iron-gray mt-4 max-w-xl mx-auto leading-relaxed">
+              Drop in, say hi, and grab your free trial class. We're at Bathurst
+              and Richmond — hard to miss.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+            <!-- Contact form (left) -->
+            <div>
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                class="space-y-5"
+                id="contactForm"
+              >
+                <!-- Netlify hidden form-name -->
+                <input type="hidden" name="form-name" value="contact" />
+
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-iron-light mb-1.5"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Your name"
+                    class="w-full bg-iron-black border border-iron-border rounded px-4 py-3 text-iron-white placeholder:text-iron-gray/50 focus:outline-none focus:border-blaze transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-iron-light mb-1.5"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="you@example.com"
+                    class="w-full bg-iron-black border border-iron-border rounded px-4 py-3 text-iron-white placeholder:text-iron-gray/50 focus:outline-none focus:border-blaze transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="interest"
+                    class="block text-sm font-medium text-iron-light mb-1.5"
+                    >I'm Interested In</label
+                  >
+                  <select
+                    id="interest"
+                    name="interest"
+                    class="w-full bg-iron-black border border-iron-border rounded px-4 py-3 text-iron-white focus:outline-none focus:border-blaze transition-colors appearance-none cursor-pointer"
+                    style="
+                      background-image: url(&quot;data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 fill=%22%23a0a0a0%22 viewBox=%220 0 16 16%22><polygon points=%224,6 8,10 12,6%22/></svg>&quot;);
+                      background-repeat: no-repeat;
+                      background-position: right 1rem center;
+                    "
+                  >
+                    <option value="free-trial">Free Trial Class</option>
+                    <option value="membership">Membership Info</option>
+                    <option value="personal-training">Personal Training</option>
+                    <option value="general">General Inquiry</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-iron-light mb-1.5"
+                    >Message
+                    <span class="text-iron-gray font-normal"
+                      >(optional)</span
+                    ></label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Tell us about your goals..."
+                    class="w-full bg-iron-black border border-iron-border rounded px-4 py-3 text-iron-white placeholder:text-iron-gray/50 focus:outline-none focus:border-blaze transition-colors resize-y"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full sm:w-auto bg-blaze hover:bg-blaze-dark text-white font-bold px-8 py-3.5 rounded uppercase tracking-wider text-sm transition-all duration-200 hover:scale-[1.02] focus-visible:scale-[1.02] shadow-lg shadow-blaze/25"
+                >
+                  Send & Get Your Free Trial
+                </button>
+
+                <p
+                  id="formFeedback"
+                  class="text-sm mt-3 hidden"
+                  role="status"
+                ></p>
+              </form>
+            </div>
+
+            <!-- Map + Hours + Info (right) -->
+            <div class="flex flex-col gap-8">
+              <!-- Google Maps iframe placeholder -->
+              <div
+                class="rounded-lg overflow-hidden border border-iron-border shadow-lg w-full aspect-[4/3] bg-iron-card"
+              >
+                <!-- Embed for 120 Bathurst St, Toronto -->
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.042487012345!2d-79.401234!3d43.645678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68f012345%3A0x123456789abcdef!2s120%20Bathurst%20St%2C%20Toronto%2C%20ON!5e0!3m2!1sen!2sca!4v1690000000000"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Iron Peak Fitness location at 120 Bathurst Street, Toronto"
+                  class="grayscale-[30%]"
+                >
+                </iframe>
+              </div>
+
+              <!-- Hours card -->
+              <div
+                class="bg-iron-card border border-iron-border rounded-lg p-6 sm:p-8"
+              >
+                <h3
+                  class="font-display text-2xl tracking-wide text-iron-white mb-4 flex items-center gap-2"
+                >
+                  <!-- Clock icon -->
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#F15A24"
+                    stroke-width="2.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12,6 12,12 16,14" />
+                  </svg>
+                  GYM HOURS
+                </h3>
+                <ul class="space-y-3 text-sm">
+                  <li
+                    class="flex justify-between border-b border-iron-border pb-2"
+                  >
+                    <span class="text-iron-gray">Monday – Friday</span>
+                    <span class="text-iron-white font-semibold"
+                      >5:00 AM – 10:00 PM</span
+                    >
+                  </li>
+                  <li class="flex justify-between">
+                    <span class="text-iron-gray">Saturday – Sunday</span>
+                    <span class="text-iron-white font-semibold"
+                      >7:00 AM – 6:00 PM</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Quick contact info -->
+              <div class="space-y-3 text-sm">
+                <div class="flex items-start gap-3">
+                  <!-- Pin icon -->
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#F15A24"
+                    stroke-width="2.5"
+                    aria-hidden="true"
+                    class="mt-0.5 shrink-0"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <div>
+                    <p class="text-iron-white font-semibold">Location</p>
+                    <p class="text-iron-gray">120 Bathurst St, Toronto, ON</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <!-- Phone icon -->
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#F15A24"
+                    stroke-width="2.5"
+                    aria-hidden="true"
+                    class="mt-0.5 shrink-0"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                  <div>
+                    <p class="text-iron-white font-semibold">Phone</p>
+                    <a
+                      href="tel:+14165550199"
+                      class="text-iron-gray hover:text-blaze transition-colors"
+                      >(416) 555-0199</a
+                    >
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <!-- Mail icon -->
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#F15A24"
+                    stroke-width="2.5"
+                    aria-hidden="true"
+                    class="mt-0.5 shrink-0"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                  <div>
+                    <p class="text-iron-white font-semibold">Email</p>
+                    <a
+                      href="mailto:info@ironpeakfitness.ca"
+                      class="text-iron-gray hover:text-blaze transition-colors break-all"
+                      >info@ironpeakfitness.ca</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================================================================== -->
+    <!-- SECTION: Footer                                                    -->
+    <!-- ================================================================== -->
+    <footer class="bg-iron-black border-t border-iron-border py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid sm:grid-cols-3 gap-8 items-center text-center sm:text-left"
+        >
+          <!-- Brand -->
+          <div class="flex flex-col items-center sm:items-start gap-2">
+            <a
+              href="#"
+              class="flex items-center gap-2 no-underline"
+              aria-label="Iron Peak Fitness home"
+            >
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <rect
+                  x="2"
+                  y="10"
+                  width="8"
+                  height="12"
+                  rx="2"
+                  fill="#F15A24"
+                />
+                <rect
+                  x="22"
+                  y="10"
+                  width="8"
+                  height="12"
+                  rx="2"
+                  fill="#F15A24"
+                />
+                <rect
+                  x="10"
+                  y="12"
+                  width="12"
+                  height="2"
+                  rx="1"
+                  fill="#F15A24"
+                />
+                <rect
+                  x="10"
+                  y="18"
+                  width="12"
+                  height="2"
+                  rx="1"
+                  fill="#F15A24"
+                />
+              </svg>
+              <span class="font-display text-xl tracking-wider text-iron-white"
+                >IRON PEAK</span
+              >
+            </a>
+            <p class="text-iron-gray text-xs mt-1">
+              Train hard. Get results. No fluff.
+            </p>
+          </div>
+
+          <!-- Quick links -->
+          <nav
+            class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-sm font-medium uppercase tracking-wider text-iron-gray"
+            aria-label="Footer navigation"
+          >
+            <a href="#about" class="hover:text-blaze transition-colors"
+              >About</a
+            >
+            <a href="#classes" class="hover:text-blaze transition-colors"
+              >Classes</a
+            >
+            <a href="#contact" class="hover:text-blaze transition-colors"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Social & Copy -->
+          <div class="flex flex-col items-center sm:items-end gap-3">
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/ironpeakfitness"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 text-iron-gray hover:text-blaze transition-colors text-sm"
+              aria-label="Follow Iron Peak Fitness on Instagram"
+            >
+              <!-- Instagram icon -->
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="5" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1.5"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+              @ironpeakfitness
+            </a>
+            <p class="text-iron-gray/50 text-xs">
+              &copy; <span id="currentYear"></span> Iron Peak Fitness. All
+              rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================================================================== -->
+    <!-- SCRIPTS                                                             -->
+    <!-- ================================================================== -->
+    <script>
+      // ----------------------------------------------------------------
+      // Mobile menu toggle
+      // ----------------------------------------------------------------
+      (function () {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const spans = hamburger.querySelectorAll("span");
+
+        if (!hamburger || !mobileMenu) return;
+
+        hamburger.addEventListener("click", () => {
+          const isOpen = mobileMenu.classList.toggle("open");
+          hamburger.setAttribute("aria-expanded", isOpen);
+
+          // Animate hamburger to X
+          if (isOpen) {
+            spans[0].style.transform = "rotate(45deg) translateY(8px)";
+            spans[1].style.opacity = "0";
+            spans[2].style.transform = "rotate(-45deg) translateY(-8px)";
+          } else {
+            spans[0].style.transform = "";
+            spans[1].style.opacity = "";
+            spans[2].style.transform = "";
+          }
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            hamburger.setAttribute("aria-expanded", "false");
+            spans[0].style.transform = "";
+            spans[1].style.opacity = "";
+            spans[2].style.transform = "";
+          });
+        });
+      })();
+
+      // ----------------------------------------------------------------
+      // Contact form submission feedback (Netlify-aware)
+      // ----------------------------------------------------------------
+      (function () {
+        const form = document.getElementById("contactForm");
+        const feedback = document.getElementById("formFeedback");
+        if (!form || !feedback) return;
+
+        form.addEventListener("submit", function (e) {
+          // Let Netlify handle the actual submission; show optimistic feedback
+          feedback.textContent =
+            "Thanks! Your message has been sent. We'll get back to you within 24 hours.";
+          feedback.classList.remove("hidden", "text-red-400");
+          feedback.classList.add("text-green-400", "block");
+
+          // Reset form after a short delay (Netlify processes before reset)
+          setTimeout(() => {
+            form.reset();
+          }, 800);
+        });
+      })();
+
+      // ----------------------------------------------------------------
+      // Dynamic copyright year
+      // ----------------------------------------------------------------
+      (function () {
+        const yearSpan = document.getElementById("currentYear");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      })();
+    </script>
+  </body>
+</html>
