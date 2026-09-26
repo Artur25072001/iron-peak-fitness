@@ -146,7 +146,7 @@
     </style>
   </head>
   <body class="font-body antialiased">
-<!-- Demo notice: this is a fictional business built as a portfolio sample. See robots.txt and the noindex meta tag in <head>. --><div role="note" style="background:#1b1b19;color:#f4efe7;font:400 0.8rem/1.55 system-ui,-apple-system,sans-serif;text-align:center;padding:0.65rem 1rem;"><strong style="font-weight:600;">Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://github.com/Artur25072001" target="_blank" rel="noopener" style="color:#f4efe7;text-decoration:underline;">See the author portfolio and code</a></div>
+<!-- Demo notice: this is a fictional business built as a portfolio sample. See robots.txt and the noindex meta tag in <head>. --><div role="note" style="background:#1b1b19;color:#f4efe7;font:400 0.8rem/1.55 system-ui,-apple-system,sans-serif;text-align:center;padding:0.65rem 1rem;"><strong style="font-weight:600;">Demo website.</strong> A fictional business built as a portfolio sample by Artur Dymchevskyi. The company, its team, its photos, prices, contact details, reviews and testimonials are all invented, and this page is deliberately kept out of search results. <a href="https://portfolio-artur-dymchevskyi.netlify.app/" target="_blank" rel="noopener" style="color:#f4efe7;text-decoration:underline;">See the author&rsquo;s portfolio</a></div>
     <!-- ================================================================== -->
     <!-- SECTION: Navigation (sticky, mobile-first hamburger)                -->
     <!-- ================================================================== -->
@@ -662,15 +662,12 @@
           <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
             <!-- Contact form (left) -->
             <div>
-              <form
+              <form data-demo-form="true" onsubmit="return false"
                 name="contact"
                 method="POST"
-                data-netlify="true"
                 class="space-y-5"
                 id="contactForm"
               >
-                <!-- Netlify hidden form-name -->
-                <input type="hidden" name="form-name" value="contact" />
 
                 <div>
                   <label
@@ -754,8 +751,10 @@
 
                 <p
                   id="formFeedback"
-                  class="text-sm mt-3 hidden"
+                  data-demo-form-status
+                  class="text-sm mt-3"
                   role="status"
+                  aria-live="polite"
                 ></p>
               </form>
             </div>
@@ -1067,27 +1066,6 @@
         });
       })();
 
-      // ----------------------------------------------------------------
-      // Contact form submission feedback (Netlify-aware)
-      // ----------------------------------------------------------------
-      (function () {
-        const form = document.getElementById("contactForm");
-        const feedback = document.getElementById("formFeedback");
-        if (!form || !feedback) return;
-
-        form.addEventListener("submit", function (e) {
-          // Let Netlify handle the actual submission; show optimistic feedback
-          feedback.textContent =
-            "Thanks! Your message has been sent. We'll get back to you within 24 hours.";
-          feedback.classList.remove("hidden", "text-red-400");
-          feedback.classList.add("text-green-400", "block");
-
-          // Reset form after a short delay (Netlify processes before reset)
-          setTimeout(() => {
-            form.reset();
-          }, 800);
-        });
-      })();
 
       // ----------------------------------------------------------------
       // Dynamic copyright year
@@ -1099,5 +1077,26 @@
         }
       })();
     </script>
-  </body>
+  <script>
+  /* Demo form: presentational only. Nothing is transmitted and no message is
+     sent anywhere, so there is no form endpoint behind this page. */
+  (function () {
+    var message =
+      "Thanks \u2014 this is a demo form, so nothing was actually sent. On a live site your message would reach the business.";
+    Array.prototype.forEach.call(
+      document.querySelectorAll("form[data-demo-form]"),
+      function (form) {
+        var status = form.querySelector("[data-demo-form-status]");
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (status) {
+            status.textContent = message;
+            status.style.display = "block";
+          }
+          form.reset();
+        });
+      }
+    );
+  })();
+</script></body>
 </html>
